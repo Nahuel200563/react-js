@@ -1,11 +1,35 @@
-export default function ItemListContainer(props) {
-  const greeting = props.greeting;
+import getAsyncData, { getAsyncItemsByCategory } from "/data/getAsyncData";
+import { useState, useEffect } from "react";
+import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
+
+function ItemListContainer(props) {
+  const [products, setProducts] = useState([]);
+  console.log("%cRender de ItemListContainer", "color: yellow");
+  const { catid } = useParams();
+
+  useEffect(() => {
+    if (catid) {
+      const respuestaPromise = getAsyncItemsByCategory(catid);
+      console.log(respuestaPromise);
+      respuestaPromise
+        .then((respuesta) => setProducts(respuesta))
+        .catch((error) => alert(error));
+    } else {
+      const respuestaPromise = getAsyncData();
+      console.log(respuestaPromise);
+      respuestaPromise
+        .then((respuesta) => setProducts(respuesta))
+        .catch((error) => alert(error));
+    }
+  }, [catid]);
 
   return (
-    <div className="">
-      <h1 className="d-flex justify-content-center align-items-center p-5">
-        {greeting}
-      </h1>
+    <div>
+      <p className="saludos">{props.greeting}</p>
+      <ItemList products={products} />
     </div>
   );
 }
+
+export default ItemListContainer;
