@@ -62,3 +62,16 @@
     padding: 20px;
     color: black;
 }
+
+btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    color: black;
+    cursor: pointer;
+}	

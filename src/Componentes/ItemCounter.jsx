@@ -3,11 +3,12 @@ import { useState, useEffect } from "react";
 
 function ItemCounter(props) {
   const [count, setCount] = useState(1);
-
   const [isOn, setIsOn] = useState(true);
 
+  const { onSubmitCount } = props;
+
   const handleAdd = () => {
-    if (count > props.stock) {
+    if (count === props.max) {
       alert("maxima cantiadad alcanzada");
     } else {
       setCount(count + 1);
@@ -39,6 +40,17 @@ function ItemCounter(props) {
       <button className="handleSubsTract" onClick={handleSubsTract}>
         ➖
       </button>
+
+      <div>
+        <button
+          className="btn"
+          onClick={() => {
+            onSubmitCount(count);
+          }}
+        >
+          Comprar
+        </button>
+      </div>
 
       {/* ejemplo de false y true botton */}
       {/* <div>

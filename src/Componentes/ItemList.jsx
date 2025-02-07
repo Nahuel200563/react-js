@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import artItems from "../../data/data";
 import CardProduct from "./item";
 
-function ItemList() {
-  const list = artItems.map((prod) => (
+function ItemList({ products }) {
+  const list = products.map((prod) => (
     <CardProduct
       id={prod.id}
       key={prod.id}

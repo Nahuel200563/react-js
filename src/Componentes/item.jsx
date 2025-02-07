@@ -19,7 +19,6 @@ function Item(props) {
             <p>Ver más</p>
           </Link>
         </div>
-        <Button style={{ alignItems: "flex-end" }}>Agregar al carrito</Button>
       </div>
     </div>
   );

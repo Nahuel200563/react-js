@@ -1,4 +1,4 @@
-import getAsyncData, { getAsyncItemsByCategory } from "/data/getAsyncData";
+import getAsyncData, { getAsyncItemsByCategory } from "/data/database";
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";

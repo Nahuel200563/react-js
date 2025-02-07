@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getAsyncItemById } from "../../data/getAsyncData";
+import { getAsyncItemById } from "../../data/database";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 
@@ -21,7 +21,7 @@ function ItemDetailContainer() {
   return (
     <div className="cardos">
       {" "}
-      <ItemDetail {...itemInfo} />{" "}
+      <ItemDetail {...itemInfo} id={id} />{" "}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import CartWidget from "./CartWidget";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../ItemDetail.css";
 
 export default function NavBar() {
@@ -19,7 +19,7 @@ export default function NavBar() {
             <li className="mx-4 fs-3 fw-bold">
               <Link to="/" className="text-decoration-none text-dark">
                 {" "}
-                inicio{" "}
+                Inicio{" "}
               </Link>
             </li>
             <li className="mx-4 fs-3 fw-bold">
@@ -38,7 +38,10 @@ export default function NavBar() {
         </div>
 
         <div className="p-3" style={{ width: "15%" }}>
-          <CartWidget />
+          <Link to="/cart" className="text-decoration-none text-dark">
+            {" "}
+            <CartWidget />{" "}
+          </Link>
         </div>
       </div>
 
